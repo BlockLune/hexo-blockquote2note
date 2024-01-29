@@ -1,5 +1,7 @@
+import {blockquote2note} from './blockquote2note';
+
 // @ts-ignore
 hexo.extend.filter.register('before_post_render', data => {
-  // do some operation on data ...
+  data.content = blockquote2note(data.content);
   return data;
 });
