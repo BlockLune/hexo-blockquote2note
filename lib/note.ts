@@ -30,11 +30,11 @@ export const getNoteHead = (options?: string): string => {
   result.push(NOTE_HEAD_FLAG);
 
   if (options) {
-    const optionArray = options.split(',', 3); // split to three parts
+    const optionArray = options.split(',');
 
     const noteType = parseNoteType(optionArray[0]);
     const iconType = parseIconType(optionArray[1]);
-    const other = parseOther(optionArray[2]);
+    const other = parseOther(optionArray.slice(2).join(',')); // three parts
 
     if (noteType !== '') result.push(noteType);
     if (iconType !== '') result.push(iconType);
