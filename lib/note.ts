@@ -20,7 +20,7 @@ const parseIconType = (option: string): string => {
   return option.trim();
 };
 
-const parseOther = (option: string): string => {
+const parseSummary = (option: string): string => {
   return option.trim();
 };
 
@@ -34,11 +34,11 @@ export const getNoteHead = (options?: string): string => {
 
     const noteType = parseNoteType(optionArray[0]);
     const iconType = parseIconType(optionArray[1]);
-    const other = parseOther(optionArray.slice(2).join(',')); // three parts
+    const summary = parseSummary(optionArray.slice(2).join(',')); // three parts
 
     if (noteType !== '') result.push(noteType);
     if (iconType !== '') result.push(iconType);
-    if (other !== '') result.push(other);
+    if (summary !== '') result.push(summary);
   }
 
   result.push(NOTE_RIGHT_PART);
