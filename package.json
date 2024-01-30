@@ -4,12 +4,10 @@
   "description": "A Hexo plugin that renders blockquotes to note tag in NexT theme.",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish ": "npm install && npm run clean && npm run build",
     "build": "tsc -b",
     "clean": "tsc -b --clean",
     "eslint": "eslint .",
-    "pretest": "npm run clean && npm run build",
-    "test": "mocha -r ts-node/register 'test/**/*.ts'"
+    "test": "mocha --import=tsx 'test/**/*.test.ts'"
   },
   "directories": {
     "lib": "./lib"
@@ -34,7 +32,7 @@
     "eslint-config-hexo": "^5.0.0",
     "hexo": "^7.1.1",
     "mocha": "^10.2.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   }
 }
