@@ -23,11 +23,11 @@ describe('Note Head Tests', () => {
 
   it('should throw error when given an invalid note type', () => {
     const invalidNoteType = 'invalidNoteType,,';
-    expect(getNoteHead(invalidNoteType)).to.throw(SyntaxError);
+    expect(() => getNoteHead(invalidNoteType)).to.throw(SyntaxError, 'Invalid note type.');
   });
 
   it('should throw error when given an invalid icon type', () => {
     const invalidIconType = ',invalidIconType,';
-    expect(getNoteHead(invalidIconType)).to.throw(SyntaxError);
+    expect(() => getNoteHead(invalidIconType)).to.throw(SyntaxError, 'Invalid icon type.');
   });
 });
