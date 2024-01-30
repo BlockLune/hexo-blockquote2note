@@ -7,7 +7,9 @@
     "prepublish ": "npm install && npm run clean && npm run build",
     "build": "tsc -b",
     "clean": "tsc -b --clean",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "pretest": "npm run clean && npm run build",
+    "test": "mocha -r ts-node/register 'test/**/*.ts'"
   },
   "directories": {
     "lib": "./lib"
@@ -25,9 +27,13 @@
   "author": "BlockLune",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "chai": "^5.0.3",
     "eslint": "^8.56.0",
     "eslint-config-hexo": "^5.0.0",
     "hexo": "^7.1.1",
+    "mocha": "^10.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
