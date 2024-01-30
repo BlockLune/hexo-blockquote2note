@@ -1,5 +1,5 @@
 const BLOCK_BEGINNING_FLAG = '<!--blockquote2note-->';
-const BLOCK_ENDING_FLAG = '<!--end_blockquote2note-->';
+const BLOCK_ENDING_FLAG = '<!--end-blockquote2note-->';
 const BLOCK_CONFIG_REGEX = /<!--blockquote2note-config:(.*?),(.*?),'(.*?)'-->/;
 // see https://theme-next.js.org/docs/tag-plugins/note
 const NOTE_TYPES = ['', 'default', 'primary', 'info', 'success', 'warning', 'danger'];
