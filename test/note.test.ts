@@ -5,7 +5,7 @@ describe('Note Head Tests', () => {
   it('should work when given full options (all valid)', () => {
     const fullOptions = 'default,no-icon,Test';
     const result = getNoteHead(fullOptions);
-    const expectedResult = '{% note default no-icon Test%}';
+    const expectedResult = '{% note default no-icon Test %}';
     assert.strictEqual(result, expectedResult);
   });
 
