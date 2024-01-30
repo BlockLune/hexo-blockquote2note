@@ -30,4 +30,11 @@ describe('Note Head Tests', () => {
     const invalidIconType = ',invalidIconType,';
     expect(() => getNoteHead(invalidIconType)).to.throw(SyntaxError, 'Invalid icon type.');
   });
+
+  it('should work when given more than two commas', () => {
+    const options = ',,This is the third option, with comma.';
+    const result = getNoteHead(options);
+    const expectedResult = '{% note This is the third option, with comma. %}';
+    assert.strictEqual(result, expectedResult);
+  });
 });
