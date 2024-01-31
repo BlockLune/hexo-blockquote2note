@@ -41,5 +41,22 @@ This is Line 1 of this blockquote.
 > For example: `<!--blockquote2note:,,Test-->`.
 
 > [!CAUTION]
->
 > Nested blockquotes are NOT supported.
+
+## Development
+
+### Setup
+
+```bash
+git clone --depth=1 git@github.com:BlockLune/hexo-blockquote2note.git
+npm install
+```
+
+### Test
+
+```bash
+npm test
+```
+
+> [!CAUTION]
+> Node v21 may not show correct line numbers in stack traces when testing. See [this](https://github.com/BlockLune/hexo-blockquote2note/issues/1) issue.
