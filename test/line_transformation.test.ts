@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { blockquoteLines2NoteLines } from '../lib/blockquote';
+import { blockquoteLines2NoteLines } from '../lib/line_transformation';
 
 
 describe('Lines Transformation Tests', () => {
