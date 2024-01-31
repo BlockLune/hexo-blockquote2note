@@ -1,10 +1,11 @@
-const NOTE_TYPES = ['', 'default', 'primary', 'info', 'success', 'warning', 'danger'];
-const ICON_TYPES = ['', 'no-icon'];
-
-const NOTE_LEFT_PART = '{%';
-const NOTE_RIGHT_PART = '%}';
-const NOTE_HEAD_FLAG = 'note';
-const NOTE_TAIL_FLAG = 'end' + NOTE_HEAD_FLAG;
+import {
+  NOTE_TYPES,
+  ICON_TYPES,
+  NOTE_LEFT_PART,
+  NOTE_RIGHT_PART,
+  NOTE_HEAD_FLAG,
+  NOTE_TAIL_FLAG
+} from './constants';
 
 const parseNoteType = (option: string): string => {
   if (NOTE_TYPES.indexOf(option.trim()) === -1) {

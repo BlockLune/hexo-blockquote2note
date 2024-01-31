@@ -1,7 +1,5 @@
 import { getNoteHead, getNoteTail } from './note';
-
-const BLOCK_HEAD_REGEX = /^<!--blockquote2note(:?(.*?))-->$/;
-const BLOCK_TAIL_REGEX = /^<!--end-blockquote2note-->$/;
+import { BLOCK_HEAD_REGEX, BLOCK_TAIL_REGEX } from './constants';
 
 const buildNoteBody = (lines: string[]): string[] => {
   const updated: string[] = [];
