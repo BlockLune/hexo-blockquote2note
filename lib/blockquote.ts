@@ -29,7 +29,7 @@ export const blockquoteLines2NoteLines = (lines: string[]): string[] => {
   }
 
   // tail
-  const tailMatch = lines[-1].match(BLOCK_TAIL_REGEX);
+  const tailMatch = lines[lines.length - 1].match(BLOCK_TAIL_REGEX);
   if (!tailMatch) throw new SyntaxError('Invalid block tail.');
   updated.push(getNoteTail());
 
