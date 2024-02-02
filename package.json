@@ -4,6 +4,7 @@
   "description": "A Hexo plugin that renders blockquotes to note tags of NexT theme.",
   "main": "dist/index.js",
   "scripts": {
+    "prepublish ": "npm install && npm run clean && npm run build",
     "build": "tsc -b",
     "clean": "tsc -b --clean",
     "eslint": "eslint .",
