@@ -67,6 +67,25 @@ describe('Lines Transformation Tests', () => {
     assert.deepStrictEqual(result, expectedResult);
   });
 
+  it('should work when lines between HEAD and TAIL are all quotes', () => {
+    const exampleLinesAllQuotes = [
+      '<!--blockquote2note-->',
+      '> This is Line 1 of this blockquote.',
+      '>', // a blank line
+      '> This is Line 3 of this blockquote.',
+      '<!--end-blockquote2note-->'
+    ];
+    const result = blockquoteLines2NoteLines(exampleLinesAllQuotes);
+    const expectedResult = [
+      '{% note %}',
+      'This is Line 1 of this blockquote.',
+      '', // a blank line
+      'This is Line 3 of this blockquote.',
+      '{% endnote %}'
+    ];
+    assert.deepStrictEqual(result, expectedResult);
+  });
+
   it('should throw error when lines between HEAD and TAIL are not all quotes', () => {
     const exampleLinesNotAllQuotes = [
       '<!--blockquote2note-->',
@@ -75,7 +94,7 @@ describe('Lines Transformation Tests', () => {
       'This is Line 3 of this blockquote. (Not quote)',
       '<!--end-blockquote2note-->'
     ];
-    expect(() => blockquoteLines2NoteLines(exampleLinesNotAllQuotes)).to.throw(SyntaxError, 'All lines in a blockquote should start with "> ".');
+    expect(() => blockquoteLines2NoteLines(exampleLinesNotAllQuotes)).to.throw(SyntaxError, 'All lines in a blockquote should start with ">".');
   });
 });
 
