@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
 import { blockquoteLines2NoteLines } from '../lib/line_transformation';
 
 
@@ -46,6 +46,36 @@ describe('Lines Transformation Tests', () => {
       '{% endnote %}'
     ];
     assert.deepStrictEqual(result, expectedResult);
+  });
+
+  it('should work when a blockquote has many lines', () => {
+    const exampleLinesManyContentLines = [
+      '<!--blockquote2note-->',
+      '> This is Line 1 of this blockquote.',
+      '> This is Line 2 of this blockquote.',
+      '> This is Line 3 of this blockquote.',
+      '<!--end-blockquote2note-->'
+    ];
+    const result = blockquoteLines2NoteLines(exampleLinesManyContentLines);
+    const expectedResult = [
+      '{% note %}',
+      'This is Line 1 of this blockquote.',
+      'This is Line 2 of this blockquote.',
+      'This is Line 3 of this blockquote.',
+      '{% endnote %}'
+    ];
+    assert.deepStrictEqual(result, expectedResult);
+  });
+
+  it('should throw error when lines between HEAD and TAIL are not all quotes', () => {
+    const exampleLinesNotAllQuotes = [
+      '<!--blockquote2note-->',
+      'This is Line 1 of this blockquote. (Not quote)',
+      '> This is Line 2 of this blockquote.',
+      'This is Line 3 of this blockquote. (Not quote)',
+      '<!--end-blockquote2note-->'
+    ];
+    expect(() => blockquoteLines2NoteLines(exampleLinesNotAllQuotes)).to.throw(SyntaxError, 'All lines in a blockquote should start with "> ".');
   });
 });
 
