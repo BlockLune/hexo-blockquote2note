@@ -15,6 +15,13 @@ describe('Note Head Tests', () => {
     const expectedResult = '{% note Test %}'; assert.strictEqual(result, expectedResult);
   });
 
+  it('should work when given more than two commas', () => {
+    const options = ',,This is the third option, with comma.';
+    const result = getNoteHead(options);
+    const expectedResult = '{% note This is the third option, with comma. %}';
+    assert.strictEqual(result, expectedResult);
+  });
+
   it('should work when given no options', () => {
     const result = getNoteHead();
     const expectedResult = '{% note %}';
@@ -29,12 +36,5 @@ describe('Note Head Tests', () => {
   it('should throw error when given an invalid icon type', () => {
     const invalidIconType = ',invalidIconType,';
     expect(() => getNoteHead(invalidIconType)).to.throw(SyntaxError, 'Invalid icon type.');
-  });
-
-  it('should work when given more than two commas', () => {
-    const options = ',,This is the third option, with comma.';
-    const result = getNoteHead(options);
-    const expectedResult = '{% note This is the third option, with comma. %}';
-    assert.strictEqual(result, expectedResult);
   });
 });
