@@ -4,7 +4,7 @@ import {
 } from './constants';
 import { blockquoteLines2NoteLines } from './line_transformation';
 
-export const blockquote2note = (dataContent: string): string => {
+export const blockquote2Note = (dataContent: string): string => {
   const lines = dataContent.split('\n');
   let headIndex = -1;
   for (let i = 0; i < lines.length; ++i) {

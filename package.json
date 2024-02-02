@@ -1,7 +1,7 @@
 {
   "name": "hexo-blockquote2note",
   "version": "1.0.0",
-  "description": "A Hexo plugin that renders blockquotes to note tag in NexT theme.",
+  "description": "A Hexo plugin that renders blockquotes to note tags of NexT theme.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -b",
