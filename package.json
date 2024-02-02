@@ -8,7 +8,7 @@
     "clean": "tsc -b --clean",
     "eslint": "eslint .",
     "test": "cross-env NODE_OPTIONS='--import tsx' mocha 'test/**/*.test.ts'",
-    "test:coverage": "nyc npm test"
+    "coverage": "nyc npm test"
   },
   "directories": {
     "lib": "./lib"
@@ -46,6 +46,9 @@
     "check-coverage": true,
     "all": true,
     "include": [
+      "lib/**/*.ts"
+    ],
+    "exclude": [
       "test/**/*.test.ts"
     ],
     "reporter": [
