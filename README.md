@@ -2,9 +2,17 @@
 
 A Hexo plugin that renders blockquotes to [the note tag of the NexT theme](https://theme-next.js.org/docs/tag-plugins/note).
 
+You may first edit your `_config.next.yml` to enable all features of the note tag. For example, this is mine:
+
+```yaml
+note:
+  style: flat
+  icons: true
+```
+
 ## Syntax
 
-Surround your blockquotes with `<!--blockquote2note-->` and `<!--end-blockquote2note-->`. For example:
+Surround the blockquotes that you want to transform to notes with `<!--blockquote2note-->` and `<!--end-blockquote2note-->`. For example:
 
 ```md
 <!--blockquote2note-->
@@ -37,8 +45,7 @@ This is Line 1 of this blockquote.
 ```
 
 > [!IMPORTANT]
-> Keep those commas, even if an option is empty.
-> For example: `<!--blockquote2note:,,Test-->`.
+> **Keep those commas**, even if an option is empty.  > For example: `<!--blockquote2note:,,Test-->`.
 
 > [!CAUTION]
 > Nested blockquotes are NOT supported.
