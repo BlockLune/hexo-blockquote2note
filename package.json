@@ -33,11 +33,13 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-config-hexo": "^5.0.0",
-    "hexo": "^7.1.1",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "hexo": "^7.1.1"
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
