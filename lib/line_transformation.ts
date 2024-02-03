@@ -4,8 +4,12 @@ import { BLOCK_HEAD_REGEX, BLOCK_TAIL_REGEX } from './constants';
 const buildNoteBody = (lines: string[]): string[] => {
   const updated: string[] = [];
   for (const line of lines) {
-    if (!line.startsWith('>')) throw new SyntaxError('All lines in a blockquote should start with ">".');
+    if (line.trim() === '') {
+      updated.push(line);
+      continue;
+    } // skip purely blank lines
 
+    if (!line.startsWith('>')) throw new SyntaxError('All lines in a blockquote should start with ">".');
     updated.push(line.slice(2)); // blockquote non-blank lines start with '> '
   }
   return updated;
