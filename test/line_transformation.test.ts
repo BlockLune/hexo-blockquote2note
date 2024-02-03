@@ -86,6 +86,29 @@ describe('Lines Transformation Tests', () => {
     assert.deepStrictEqual(result, expectedResult);
   });
 
+  it('should ignore the purely blank lines between HEAD and TAIL', () => {
+    const exampleLinesAllQuotes = [
+      '<!--blockquote2note-->',
+      '   ', // purely blank line
+      '> This is Line 1 of this blockquote.',
+      '>', // a blank line
+      '> This is Line 3 of this blockquote.',
+      '', // purely blank line
+      '<!--end-blockquote2note-->'
+    ];
+    const result = blockquoteLines2NoteLines(exampleLinesAllQuotes);
+    const expectedResult = [
+      '{% note %}',
+      '   ',
+      'This is Line 1 of this blockquote.',
+      '', // a blank line
+      'This is Line 3 of this blockquote.',
+      '',
+      '{% endnote %}'
+    ];
+    assert.deepStrictEqual(result, expectedResult);
+  });
+
   it('should throw error when lines between HEAD and TAIL are not all quotes', () => {
     const exampleLinesNotAllQuotes = [
       '<!--blockquote2note-->',
