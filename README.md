@@ -18,7 +18,9 @@ For example:
 
 ```md
 <!--blockquote2note-->
+
 > This is an example blockquote.
+
 <!--end-blockquote2note-->
 ```
 
@@ -36,7 +38,9 @@ For example:
 
 ```md
 <!--blockquote2note:default,no-icon,Test-->
+
 > This is an example blockquote.
+
 <!--end-blockquote2note-->
 ```
 
@@ -58,8 +62,7 @@ After v1.1.0, purely blank lines between HEAD and TAIL are allowed. So it's also
 <!--end-blockquote2note-->
 ```
 
-> [!IMPORTANT]
-> **Keep those commas**, even if an option is empty.  
+> [!IMPORTANT] > **Keep those commas**, even if an option is empty.  
 > For example: `<!--blockquote2note:,,Test-->`.
 
 > [!CAUTION]
@@ -77,13 +80,13 @@ npm install hexo-blockquote2note --save
 
 ```bash
 git clone --depth=1 git@github.com:BlockLune/hexo-blockquote2note.git
-npm install
+pnpm install
 ```
 
 ### Test
 
 ```bash
-npm test
+pnpm test
 ```
 
 > [!CAUTION]
