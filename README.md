@@ -65,6 +65,8 @@ After v1.1.0, purely blank lines between HEAD and TAIL are allowed. So it's also
 > [!IMPORTANT] > **Keep those commas**, even if an option is empty.  
 > For example: `<!--blockquote2note:,,Test-->`.
 
+---
+
 > [!CAUTION]
 > Nested blockquotes are NOT supported.
 
