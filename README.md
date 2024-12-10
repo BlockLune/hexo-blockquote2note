@@ -1,6 +1,11 @@
 # hexo-blockquote2note
 
+![NPM Version](https://img.shields.io/npm/v/hexo-blockquote2note)
+![NPM Last Update](https://img.shields.io/npm/last-update/hexo-blockquote2note)
+
 A Hexo plugin that renders blockquotes to [the note tag of the NexT theme](https://theme-next.js.org/docs/tag-plugins/note).
+
+![Preview](doc/preview.png)
 
 You may first edit your `_config.next.yml` to enable all features of the note tag. For example, this is mine:
 
